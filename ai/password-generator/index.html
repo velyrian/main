@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" type="image/png"
+    href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+
+  <link rel="shortcut icon" type="image/x-icon"
+    href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+  <link rel="mask-icon" type="image/x-icon"
+    href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+    color="#111" />
+
+
+  <title>AI.PASSWORD GENERATOR</title>
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
+
+  <link rel="stylesheet" href="style.css">
+
+
+
+
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+
+
+</head>
+
+
+<body class="hero-anime dark">
+  <div id="snackbar">Loading...</div>
+  <div class="navigation-wrap bg-light start-header start-style">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="navbar navbar-expand-md navbar-light">
+
+            <a class="navbar-brand" href="https://front.codes/" target="_blank"><h3 style="font-family: word;color: #ffeba7;padding: 0;margin: 0;">VELYRIA.TOOLS</h3></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto py-4 py-md-0">
+
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link" href="#">Agency</a>
+                </li>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">More Tools</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Ai Tools</a>
+                    <a class="dropdown-item" href="#">Seo Tools</a>
+                    <a class="dropdown-item" href="#">Programming Tools</a>
+                    <a class="dropdown-item" href="#">Recomanded Tools</a>
+                  </div>
+                </li>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link" href="#">Privacy And Policy</a>
+                </li>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link" href="#">Contact us</a>
+                </li>
+              </ul>
+            </div>
+
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="section">
+    <div class="container">
+      <div class="row full-height justify-content-center">
+        <div class="col-12 text-center align-self-center py-5">
+          <div class="section pb-5 pt-5 pt-sm-2 text-center">
+            <h6 class="mb-0 pb-3"><span>Generate Password </span><span>Generate Username </span></h6>
+            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+            <label for="reg-log"></label>
+            <div class="card-3d-wrap mx-auto">
+              <div class="card-3d-wrapper">
+                <div class="card-front">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="mb-4 pb-3">Generate Password</h4>
+                      <div class="pwd-generator-container">
+                        <div class="form-group" onclick="showToast('Saved To clippboard');">
+
+                          <h3 id="generated-password" class="form-style" style="text-align: center;margin-top: 15%;"
+                            onclick="showToast('hello')"></h3>
+                          <i class="input-icon uil-copy" style="margin-left: 80%;"
+                            onclick="showToast('Saved To Clipboard');"></i>
+                        </div>
+                        <div class="pass-indicator" id="indicate"></div>
+
+                        <div class="pwd-length-container">
+                          <span>Length</span>
+                          <input id="pwd-length-slider" type="range" min="3" max="25" step="1"
+                            style="accent-color: #ffeba7;" value="12" />
+                          <span id="pwd-length-value"></span>
+                        </div>
+                        <fieldset>
+                          <input type="checkbox" id="contains-uppercase-letters" value="upperAlphaChar" class="magic"
+                            checked>
+                          <label for="contains-letters">Uppercase Letters</label>
+                        </fieldset>
+                        <fieldset>
+                          <input type="checkbox" id="contains-lowercase-letters" value="lowerAlphaChar" class="magic"
+                            checked>
+                          <label for="contains-letters">Lowercase Letters</label>
+                        </fieldset>
+                        <fieldset>
+                          <input type="checkbox" id="contains-numbers" value="numericChar" class="magic" checked>
+                          <label for="contains-numbers">Numbers</label>
+                        </fieldset>
+                        <fieldset>
+                          <input type="checkbox" id="contains-special-chars" value="specialChar" class="magic">
+                          <label for="special-chars">Special Characters</label>
+                        </fieldset>
+                        <div  style="display: flex;justify-content: space-between ;"> 
+                          <a href="#" class="btn mt-4" onclick="showToast('Copied To Clipboard');" style="margin: 010px;padding: 0 10px 0 10px;">Copy to
+                            clipbaord</a>
+                          <a href="#" class="btn mt-4" id="generate-new" style="padding: 0 10px 0 10px;">Generate New Pass</a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4   style="margin: 0;padding: 0;">Generate Username</h4>
+                      <div class="pwd-generator-container" style="margin-top: -35px;" >
+                        <div class="form-group" onclick="showToast('Saved To clippboard');">
+
+                          <h3 id="generated-password" class="form-style" style="text-align: center;margin-top: 15%;"
+                            onclick="showToast('hello')"></h3>
+                          <i class="input-icon uil-copy" style="margin-left: 80%;"
+                            onclick="showToast('Saved To Clipboard');"></i>
+                        </div>
+
+                        <div class="pwd-length-container">
+
+                        <fieldset>
+                          <input type="checkbox" id="contains-uppercase-letters" value="upperAlphaChar" class="magic"
+                            checked>
+                          <label for="contains-letters">Uppercase Letters</label>
+                        </fieldset>
+                        <fieldset>
+                          <input type="checkbox" id="contains-lowercase-letters" value="lowerAlphaChar" class="magic"
+                            checked>
+                          <label for="contains-letters">Lowercase Letters</label>
+                        </fieldset>
+                        <fieldset>
+                          <input type="checkbox" id="contains-numbers" value="numericChar" class="magic" checked>
+                          <label for="contains-numbers">Numbers</label>
+                        </fieldset>
+                        <fieldset>
+                          <input type="checkbox" id="contains-special-chars" value="specialChar" class="magic">
+                          <label for="special-chars">Adjectives</label>
+                        </fieldset>
+                        <fieldset>
+                          <input type="checkbox" id="contains-special-chars" value="specialChar" class="magic">
+                          <label for="special-chars">Verbs</label>
+                        </fieldset>
+                        <fieldset>
+                          <input type="checkbox" id="contains-special-chars" value="specialChar" class="magic">
+                          <label for="special-chars">Nouns</label>
+                        </fieldset>
+                        <fieldset>
+                          <input type="checkbox" id="contains-special-chars" value="specialChar" class="magic">
+                          <label for="special-chars">adverbs</label>
+                        </fieldset>
+                        <fieldset>
+                          <input type="checkbox" id="contains-special-chars" value="specialChar" class="magic">
+                          <label for="special-chars">Colors</label>
+                        </fieldset>
+                        <div  style="display: flex;justify-content: space-between ;"> 
+                          <a href="#" class="btn mt-4" onclick="showToast('Copied To Clipboard');" style="margin: 010px;padding: 0 10px 0 10px;">Copy to
+                            clipbaord</a>
+                          <a href="#" class="btn mt-4" id="generate-new" style="padding: 0 10px 0 10px;">Generate New Username</a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <script
+                  src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+                <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+                <script src="script.js">
+
+                </script>
+                <script type="text/javascript" src="usernames/colors.json"></script>
+
+
+
+</body>
+
+</html>
