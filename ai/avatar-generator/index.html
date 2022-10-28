@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" type="image/png"
+    href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+
+  <link rel="shortcut icon" type="image/x-icon"
+    href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+  <link rel="mask-icon" type="image/x-icon"
+    href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+    color="#111" />
+
+
+  <title>AI.PASSWORD GENERATOR</title>
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
+
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+
+
+</head>
+
+
+<body class="hero-anime dark">
+  <div id="snackbar">Loading...</div>
+  <div class="navigation-wrap bg-light start-header start-style">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="navbar navbar-expand-md navbar-light">
+
+            <a class="navbar-brand" href="https://velyria.com/" target="_blank">
+              <h3 style="font-family: word;color: #ffeba7;padding: 0;margin: 0;">VELYRIA.TOOLS</h3>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto py-4 py-md-0">
+
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">More Tools</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="../../toos/ai">Ai Tools</a>
+                    <a class="dropdown-item" href="../../tools/seo">Seo Tools</a>
+                    <a class="dropdown-item" href="../../tools/programing">Programming Tools</a>
+                    <a class="dropdown-item" href="../../tools?recommanded">Recomanded Tools</a>
+                    <a class="dropdown-item" href="../../tools">View All Tools</a>
+                  </div>
+                </li>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link" href="https://velyria.com/about-us">About Us</a>
+                </li>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link" href="https://velyria.com/privacy-policy">Privacy Policy</a>
+                </li>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link" href="https://velyria.com/contact">Contact us</a>
+                </li>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link" href="https://velyria.com/sign?tools">Sign in</a>
+                </li>
+              </ul>
+            </div>
+
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="section">
+    <div class="container">
+      <div class="row full-height justify-content-center">
+        <div class="col-12  align-self-center py-5">
+          <div class="section pb-5 pt-5 pt-sm-2 ">
+            <div class="card-3d-wrap mx-auto">
+              <div class="card-3d-wrapper">
+                <div class="card-front">
+                  <div class="center-wrap">
+                    <div class="section ">
+                      <h4 class="mb-4 pb-3" style="text-align: center;">Generate Password</h4>
+                      <div class="form-style" style="width: 50%;height:100%;padding: 0;margin: 0;margin-left: 25%;">
+                        <img src="" id="avatar" alt="" width="100%">
+
+                      </div>
+                      <span>Choose Style</span>
+                      <div class="form-group">
+                        <div class="dropdown">
+                          <div id="style-dropdown" class="form-style dropbtn"
+                            style="margin-top: 3%;margin-right: 0;margin-left: 0;padding: 0;">
+                            <img src="assets/styles/micah.svg" alt="" width="20%" height="100%" id="style-type">
+                            <span id="style-type">Micah</span>
+                          </div>
+                          <div class="dropdown-content">
+                            <div style="display: flex;">
+                              <img src="assets/styles/micah.svg" alt="" width="20%">
+                              <a href="">Micah</a>
+                            </div>
+                            <div style="display: flex;">
+                              <img src="assets/styles/avatars.svg" alt="" width="20%">
+                              <a href="">Avataaars</a>
+                            </div>
+                            <div style="display: flex;">
+                              <img src="assets/styles/ball-face.svg" alt="" width="20%">
+                              <a href="">Adventurer</a>
+                            </div>
+                            <div style="display: flex;">
+                              <img src="assets/styles/miniavs.svg" alt="" width="20%">
+                              <a href="">Miniavs</a>
+                            </div>
+                            <div style="display: flex;">
+                              <img src="assets/styles/personas.svg" alt="" width="20%">
+                              <a href="">Personas</a>
+                            </div>
+
+                          </div>
+                        </div>
+                        <i class="input-icon uil-swatchbook" style="margin-left: 80%;"></i>
+                      </div>
+                      <span>custom seed</span>
+                      <div class="form-group">
+
+                        <input type="text" placeholder="jhon doe" id="input-text" class="form-style"
+                          style="margin-top: 3%;margin-right: 0;margin-left: 0;"></input>
+                        <i class="input-icon uil-pen" style="margin-left: 80%;margin-top: 3%;"></i>
+                      </div>
+                      <div style="text-align: center;display: flex;">
+                        <a href="#" class="btn mt-4" id="generate-new"
+                          style="padding: 0 10px 0 10px;width: 50%;">Generate New</a>
+                        <a href="#" class="btn mt-4" id="generate-new"
+                          style="padding: 0 10px 0 10px;width: 50%;margin-left: 5%;">Download Avatar</a>
+                      </div>
+
+
+
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+                <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+                <script src="script.js">
+
+                </script>
+                <script type="text/javascript" src="usernames/colors.json"></script>
+
+
+
+</body>
+
+</html>
