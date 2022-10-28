@@ -1,7 +1,8 @@
 const avatar = document.getElementById('avatar');
 const inputField = document.getElementById('input-text');
-// Global Variables
-const avatarTypes = ['personas', 'adventurer', 'big-ears', 'big-smile','micah', 'miniavs'];
+// Global Variables   
+ const avatarTypes = ['micah','personas', 'adventurer', 'big-ears', 'big-smile', 'miniavs','avataaars', 'bottts' , 'adventurer-neutral','open-peeps'];
+
 let counter = 0;
 
 // Initialize the app
@@ -10,26 +11,59 @@ init();
 //Event Listeners
 
 inputField.addEventListener('keyup', generateAvatar);
-switchBtns.forEach(btn => btn.addEventListener('click', switchAvatarType.bind(this) ));
 
 // Functions
 function init(){
     counter = 0;
     inputField.value = "";
-    avatar.src = `https://avatars.dicebear.com/api/micah/1432.svg`;
+    avatar.src = `https://avatars.dicebear.com/api/micah/34059345.svg`;
 }
+var source;
+function generateAvatar(){ 
 
-function generateAvatar(){    
-    const source = `https://avatars.dicebear.com/api/${avatarTypes[counter]}/${inputField.value}.svg`;
+
+    if(inputField && inputField.value){
+         source = `https://avatars.dicebear.com/api/${avatarTypes[counter]}/${inputField.value}.svg`;
+    }else{
+        source = `https://avatars.dicebear.com/api/${avatarTypes[counter]}/:seed.svg`;
+
+    }
     avatar.src = source;
 }
 
-function switchAvatarType(){
-    if(this.id === "next"){
-        counter = ++counter === avatarTypes.length ?  0 : counter++;
-    }else{
-        counter = --counter < 0 ?  avatarTypes.length -1 : counter--;        
-    }
-    switchType.textContent = avatarTypes[counter];
-    avatar.src = `https://avatars.dicebear.com/api/${avatarTypes[counter]}/${inputField.value}.svg`;
+
+function change(c){
+    counter = c;
+
+    document.getElementById('style-type').innerHTML = avatarTypes[counter] ;
+    document.getElementById('style-img').src = `assets/styles/${avatarTypes[counter]}.svg` ;
+    generateAvatar();
 }
+
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+} 
